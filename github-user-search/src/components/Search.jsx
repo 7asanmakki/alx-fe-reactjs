@@ -19,7 +19,11 @@ const Search = () => {
       const userData = await fetchUserData(query);
       setUsers([userData]); // wrap in array to match advanced format
     } catch (err) {
+<<<<<<< HEAD
       setError("Looks like we cant find the user");
+=======
+      setError("Looks like we can't find the user");
+>>>>>>> 0d6f918 (Setup Tailwind CSS in new React project)
       setUsers([]);
     }
     setLoading(false);
@@ -44,9 +48,13 @@ const Search = () => {
   return (
     <div className="max-w-2xl mx-auto p-4">
       <form
+<<<<<<< HEAD
         onSubmit={
           location || minRepos ? handleAdvancedSearch : handleBasicSearch
         }
+=======
+        onSubmit={location || minRepos ? handleAdvancedSearch : handleBasicSearch}
+>>>>>>> 0d6f918 (Setup Tailwind CSS in new React project)
         className="space-y-4"
       >
         <input
