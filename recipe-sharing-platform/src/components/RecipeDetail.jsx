@@ -1,9 +1,15 @@
 import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 import data from "../data.json";
 
 const RecipeDetail = () => {
   const { id } = useParams();
-  const recipe = data.find((r) => r.id.toString() === id);
+  const [recipe, setRecipe] = useState(null);
+
+  useEffect(() => {
+    const found = data.find((r) => r.id.toString() === id);
+    setRecipe(found);
+  }, [id]);
 
   if (!recipe) {
     return (
@@ -22,6 +28,14 @@ const RecipeDetail = () => {
       />
       <h1 className="text-3xl font-bold mt-4 text-gray-800">{recipe.title}</h1>
       <p className="mt-2 text-gray-600">{recipe.summary}</p>
+
+      <h2 className="text-2xl font-semibold mt-6 text-gray-700">Ingredients</h2>
+      <ul className="list-disc list-inside mt-2 text-gray-700">
+        {recipe.ingredients?.map((ingredient, index) => (
+          <li key={index}>{ingredient}</li>
+        ))}
+      </ul>
+
       <h2 className="text-2xl font-semibold mt-6 text-gray-700">Instructions</h2>
       <p className="mt-2 text-gray-700">{recipe.instructions}</p>
     </div>
