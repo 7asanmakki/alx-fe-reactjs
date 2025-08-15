@@ -1,20 +1,18 @@
 [
   {
     "id": 1,
-    "title": "Spaghetti Carbonara",
-    "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
-    "image": "https://via.placeholder.com/300x200"
+    "title": "Spaghetti Bolognese",
+    "summary": "A classic Italian pasta dish with rich meat sauce.",
+    "description": "Delicious spaghetti with homemade bolognese sauce, simmered to perfection.",
+    "ingredients": ["Spaghetti", "Minced meat", "Tomato sauce", "Onion", "Garlic", "Olive oil"],
+    "image": "https://source.unsplash.com/600x400/?spaghetti"
   },
   {
     "id": 2,
-    "title": "Chicken Tikka Masala",
-    "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato-based gravy.",
-    "image": "https://via.placeholder.com/300x200"
-  },
-  {
-    "id": 3,
-    "title": "Vegetable Stir Fry",
-    "summary": "A quick and healthy mix of sautéed vegetables in a tangy sauce.",
-    "image": "https://via.placeholder.com/300x200"
+    "title": "Chicken Curry",
+    "summary": "Spicy and flavorful chicken curry.",
+    "description": "A hearty curry dish with tender chicken and a blend of spices.",
+    "ingredients": ["Chicken", "Curry powder", "Onion", "Tomato", "Coconut milk"],
+    "image": "https://source.unsplash.com/600x400/?curry"
   }
 ]
