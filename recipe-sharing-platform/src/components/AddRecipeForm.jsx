@@ -25,14 +25,13 @@ function AddRecipeForm() {
     e.preventDefault();
     if (!validate()) return;
 
-    // Submit logic here (e.g., send to backend or localStorage)
     console.log({
       title,
       ingredients: ingredients.split(',').map((i) => i.trim()),
       steps,
     });
 
-    // Reset form
+    // Clear form
     setTitle('');
     setIngredients('');
     setSteps('');
@@ -40,45 +39,62 @@ function AddRecipeForm() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-6 bg-white shadow-lg rounded-xl mt-10">
-      <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">
+    <div className="max-w-4xl mx-auto p-4 md:p-8 bg-white shadow-md rounded-lg mt-10">
+      <h2 className="text-2xl md:text-3xl font-bold mb-6 text-center text-gray-800">
         Add a New Recipe
       </h2>
-      <form onSubmit={handleSubmit} className="space-y-5">
+
+      <form onSubmit={handleSubmit} className="space-y-6 md:space-y-8">
         {/* Title */}
-        <div>
-          <label className="block font-medium mb-1">Recipe Title</label>
-          <input
-            type="text"
-            className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-          />
-          {errors.title && <p className="text-red-500 text-sm mt-1">{errors.title}</p>}
+        <div className="md:grid md:grid-cols-4 md:gap-4">
+          <label className="block font-medium mb-1 md:col-span-1">Recipe Title</label>
+          <div className="md:col-span-3">
+            <input
+              type="text"
+              className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
+            {errors.title && (
+              <p className="text-red-500 text-sm mt-1">{errors.title}</p>
+            )}
+          </div>
         </div>
 
         {/* Ingredients */}
-        <div>
-          <label className="block font-medium mb-1">Ingredients (comma-separated)</label>
-          <textarea
-            className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
-            rows="4"
-            value={ingredients}
-            onChange={(e) => setIngredients(e.target.value)}
-          ></textarea>
-          {errors.ingredients && <p className="text-red-500 text-sm mt-1">{errors.ingredients}</p>}
+        <div className="md:grid md:grid-cols-4 md:gap-4">
+          <label className="block font-medium mb-1 md:col-span-1">
+            Ingredients (comma-separated)
+          </label>
+          <div className="md:col-span-3">
+            <textarea
+              className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+              rows="4"
+              value={ingredients}
+              onChange={(e) => setIngredients(e.target.value)}
+            ></textarea>
+            {errors.ingredients && (
+              <p className="text-red-500 text-sm mt-1">{errors.ingredients}</p>
+            )}
+          </div>
         </div>
 
         {/* Steps */}
-        <div>
-          <label className="block font-medium mb-1">Preparation Steps</label>
-          <textarea
-            className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
-            rows="4"
-            value={steps}
-            onChange={(e) => setSteps(e.target.value)}
-          ></textarea>
-          {errors.steps && <p className="text-red-500 text-sm mt-1">{errors.steps}</p>}
+        <div className="md:grid md:grid-cols-4 md:gap-4">
+          <label className="block font-medium mb-1 md:col-span-1">
+            Preparation Steps
+          </label>
+          <div className="md:col-span-3">
+            <textarea
+              className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+              rows="4"
+              value={steps}
+              onChange={(e) => setSteps(e.target.value)}
+            ></textarea>
+            {errors.steps && (
+              <p className="text-red-500 text-sm mt-1">{errors.steps}</p>
+            )}
+          </div>
         </div>
 
         {/* Submit */}
