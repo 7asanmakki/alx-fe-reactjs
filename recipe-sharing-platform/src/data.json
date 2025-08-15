@@ -5,7 +5,7 @@
     "summary": "A classic Italian pasta dish with rich meat sauce.",
     "description": "Delicious spaghetti with homemade bolognese sauce, simmered to perfection.",
     "ingredients": ["Spaghetti", "Minced meat", "Tomato sauce", "Onion", "Garlic", "Olive oil"],
-    "image": "https://source.unsplash.com/600x400/?spaghetti"
+    "image": "https://images.ctfassets.net/uexfe9h31g3m/6QtnhruEFi8qgEyYAICkyS/ab01e9b1da656f35dd1a721c810162a0/Spaghetti_bolognese_4x3_V2_LOW_RES.jpg?w=1024&h=768&fm=webp&fit=thumb&q=90"
   },
   {
     "id": 2,
@@ -13,6 +13,6 @@
     "summary": "Spicy and flavorful chicken curry.",
     "description": "A hearty curry dish with tender chicken and a blend of spices.",
     "ingredients": ["Chicken", "Curry powder", "Onion", "Tomato", "Coconut milk"],
-    "image": "https://source.unsplash.com/600x400/?curry"
+    "image": "https://ichef.bbci.co.uk/food/ic/food_16x9_1600/recipes/chicken_curry_61994_16x9.jpg"
   }
 ]
