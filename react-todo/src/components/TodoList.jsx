@@ -1,52 +1,22 @@
-import { useState } from 'react';
-import AddTodoForm from './AddTodoForm';
+// src/components/TodoList.jsx
+import React from 'react';
 
-const initialTodos = [
-  { id: 1, text: 'Learn React', completed: false },
-  { id: 2, text: 'Build a project', completed: true },
-];
-
-export default function TodoList() {
-  const [todos, setTodos] = useState(initialTodos);
-
-  const addTodo = (text) => {
-    const newTodo = {
-      id: Date.now(),
-      text,
-      completed: false,
-    };
-    setTodos([newTodo, ...todos]);
-  };
-
-  const toggleTodo = (id) => {
-    setTodos(todos.map(todo =>
-      todo.id === id ? { ...todo, completed: !todo.completed } : todo
-    ));
-  };
-
-  const deleteTodo = (id) => {
-    setTodos(todos.filter(todo => todo.id !== id));
-  };
-
+export default function TodoList({ todos, onToggle, onDelete }) {
   return (
-    <div>
-      <h1>Todo List</h1>
-      <AddTodoForm addTodo={addTodo} />
-      <ul data-testid="todo-list">
-        {todos.map(todo => (
-          <li
-            key={todo.id}
-            onClick={() => toggleTodo(todo.id)}
-            style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}
-            data-testid="todo-item"
-          >
+    <ul>
+      {todos.map(todo => (
+        <li key={todo.id}>
+          <input
+            type="checkbox"
+            checked={todo.completed}
+            onChange={() => onToggle(todo.id)}
+          />
+          <span style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>
             {todo.text}
-            <button onClick={(e) => { e.stopPropagation(); deleteTodo(todo.id); }}>
-              Delete
-            </button>
-          </li>
-        ))}
-      </ul>
-    </div>
+          </span>
+          <button onClick={() => onDelete(todo.id)}>Delete</button>
+        </li>
+      ))}
+    </ul>
   );
 }
