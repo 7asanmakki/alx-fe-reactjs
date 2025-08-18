@@ -10,6 +10,8 @@ import ProfileDetails from './pages/ProfileDetails'
 import ProfileSettings from './pages/ProfileSettings'
 import Post from './pages/Post'
 import ProtectedRoute from './components/ProtectedRoute'
+import BlogPost from './pages/BlogPost'
+
 
 export default function App() {
   return (
@@ -28,7 +30,7 @@ export default function App() {
           <Route path="details" element={<ProfileDetails />} />
           <Route path="settings" element={<ProfileSettings />} />
         </Route>
-        <Route path="/post/:id" element={<Post />} />
+        <Route path="/blog/:id" element={<BlogPost />} />
       </Routes>
     </BrowserRouter>
   )
