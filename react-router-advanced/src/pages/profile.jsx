@@ -1,11 +1,12 @@
-import { Link, Outlet } from 'react-router-dom'
+import { Outlet, Link } from 'react-router-dom'
 
-const Profile = () => {
+function Profile() {
   return (
     <div>
       <h2>Profile Page</h2>
       <nav>
-        <Link to="details">Details</Link> | <Link to="settings">Settings</Link>
+        <Link to="details">Details</Link> | 
+        <Link to="settings">Settings</Link>
       </nav>
       <Outlet />
     </div>

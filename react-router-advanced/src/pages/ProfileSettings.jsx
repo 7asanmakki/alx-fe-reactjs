@@ -1,3 +1,4 @@
-export default function ProfileSettings() {
-  return <p>Profile Settings Component</p>
+function ProfileSettings() {
+  return <h3>Profile Settings</h3>
 }
+export default ProfileSettings

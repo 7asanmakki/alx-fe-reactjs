@@ -1,3 +1,4 @@
-export default function ProfileDetails() {
-  return <p>Profile Details Component</p>
+function ProfileDetails() {
+  return <h3>Profile Details</h3>
 }
+export default ProfileDetails

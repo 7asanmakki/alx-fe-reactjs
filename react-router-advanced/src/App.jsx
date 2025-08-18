@@ -3,19 +3,20 @@ import Home from './pages/Home'
 import Profile from './pages/Profile'
 import Login from './pages/Login'
 import NotFound from './pages/NotFound'
+import ProfileDetails from './pages/ProfileDetails'
+import ProfileSettings from './pages/ProfileSettings'
 
 function App() {
   return (
-    <><Routes>
+    <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/profile/*" element={<Profile />} />
       <Route path="/login" element={<Login />} />
-      <Route path="*" element={<NotFound />} />
-    </Routes><Route path="/profile/*" element={<Profile />}>
+      <Route path="/profile/*" element={<Profile />}>
         <Route path="details" element={<ProfileDetails />} />
         <Route path="settings" element={<ProfileSettings />} />
-      </Route></>
-
+      </Route>
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   )
 }
 
