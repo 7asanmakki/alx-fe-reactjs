@@ -4,20 +4,14 @@ export default function Login() {
   const navigate = useNavigate()
 
   const handleLogin = () => {
-    localStorage.setItem('isAuthenticated', 'true')
+    localStorage.setItem('loggedIn', 'true')
     navigate('/profile')
   }
 
   return (
     <div>
-      <h2>Login</h2>
+      <h1>Login Page</h1>
       <button onClick={handleLogin}>Log In</button>
     </div>
   )
 }
-
-function Login() {
-  return <h1>Login Page</h1>
-}
-export default Login
-
